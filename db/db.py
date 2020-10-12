@@ -18,11 +18,18 @@ con = psycopg2.connect(
   database=PGDATABASE
 )
 
-cur = con.cursor()
+# Make instance available to external packages
+def getInstance():
 
-cur.execute("SELECT * FROM representatives")
-con.commit()
+  return con
 
-rows = cur.fetchall()
+if __name__ == "__main__":
+  con = getInstance()
+  cur = con.cursor()
 
-print(rows)
+  cur.execute("SELECT * FROM representatives")
+  con.commit()
+
+  rows = cur.fetchall()
+
+  print(rows)
