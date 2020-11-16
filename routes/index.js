@@ -3,11 +3,13 @@ const router = express.Router()
 const crawler = require("./crawler")
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get("/", (req, res, next) => {
+  res.render("index", { 
+    scrapperList: crawler
+  })
+})
 
-router.get("/api/surat", (req, res, next) => {
+router.get("/scrapper/:scrapperid", (req, res) => {
   crawler.get("surat_gujarat").scrap()
   res.send("bleh")
 })

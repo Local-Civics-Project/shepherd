@@ -1,0 +1,12 @@
+.content {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+.scrappers {
+  width: 800px;
+  padding: 10px;
+  font-weight: bold;
+  background: #F2850033;
+}
