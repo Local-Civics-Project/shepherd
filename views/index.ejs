@@ -2,9 +2,10 @@
 <html>
   <head>
     <title>Shepherd</title>
+
+    <%- include("components/header"); %>
+
     <link rel="stylesheet" href="/stylesheets/home.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/navbar.css" />
   </head>
   <body>
     <div class="body">
@@ -12,9 +13,11 @@
       <div class="content">
         <div class="scrappers">
           <% scrapperList.forEach((val, key) => { %>
-            <a href="/scrapper/<%= key %>">
-              <%= val["city"] + " (" + val["state"] + ")" %>
-            </a>
+            <div class="scrapper">
+              <a href="/scrapper/<%= key %>">
+                <%= val["name"] %>
+              </a>
+            </div>
           <% }) %>
         </div>
       </div>
