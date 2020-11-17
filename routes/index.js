@@ -10,8 +10,15 @@ router.get("/", (req, res, next) => {
 })
 
 router.get("/scrapper/:scrapperid", (req, res) => {
-  crawler.get("surat_gujarat").scrap()
-  res.send("bleh")
+  const city = crawler.get(req.params.scrapperid)
+  city.scrap()
+    .then((val) => {
+      // res.json({ data: val })
+      res.render("scrapped_data", { data: val })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 })
 
 module.exports = router;

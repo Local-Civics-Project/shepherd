@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shepherd</title>
+
+    <%- include("components/header"); %>
+
+    <link rel="stylesheet" href="/stylesheets/scrapped_data.css" />
+  </head>
+  <body>
+    <div class="body">
+      <%- include("components/navbar"); %>
+      <div class="content">
+        <table>
+          <% data.forEach((row) => { %>
+            <tr>
+              <% row.forEach((item) => { %>
+                <td><span><%= item %></span></td>
+              <% }) %>
+            </tr>
+          <% }) %>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
