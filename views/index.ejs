@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shepherd</title>
+
+    <%- include("components/header"); %>
+
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+  <body>
+    <div class="body">
+      <%- include("components/navbar"); %>
+      <div class="content">
+        <div class="scrappers">
+          <% scrapperList.forEach((val, key) => { %>
+            <div class="scrapper">
+              <a href="/scrapper/<%= key %>">
+                <%= val["name"] %>
+              </a>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+td {
+  padding: 6px;
+}
+
+table, tr, td {
+  border: 1px solid #E3E3E3;
+  border-collapse: collapse;
+}
+
+.content {
+  padding: 30px;
+}
