@@ -9,7 +9,15 @@ const scrapper = (url) => {
       .then((response) => {
         const $ = cheerio.load(response.data)
 
-        resolve($("input.btn-as-link"))
+        const extracted = $("input.btn-as-link").toArray()
+
+        let data = []
+
+        extracted.forEach((item) => {
+          data.push([item.attribs.value])
+        })
+
+        resolve(data)
       })
       .catch((err) => {
         reject(err)
